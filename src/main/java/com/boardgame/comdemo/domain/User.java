@@ -18,6 +18,6 @@ public class User {
     private List gameHistory;
 
     private int rankingPosition;
-    private
+    private UserLevel userLevel;
 
 }
