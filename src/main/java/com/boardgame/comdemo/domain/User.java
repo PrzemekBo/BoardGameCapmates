@@ -2,6 +2,8 @@ package com.boardgame.comdemo.domain;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class User {
 
@@ -11,5 +13,11 @@ public class User {
     private String password;
     private String motto;
     private HoursAvailability hoursAvailability;
+
+    private List gameCollection;
+    private List gameHistory;
+
+    private int rankingPosition;
+    private
 
 }
