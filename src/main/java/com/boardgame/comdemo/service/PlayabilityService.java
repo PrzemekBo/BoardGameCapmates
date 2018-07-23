@@ -1,8 +1,8 @@
-package com.boardgame.comdemo.repository;
+package com.boardgame.comdemo.service;
 
 import com.boardgame.comdemo.domain.HoursAvailability;
 
-public interface PlayabilityRepository {
+public interface PlayabilityService {
 
     void addAvailabilityHours(HoursAvailability hoursAvailability);
 

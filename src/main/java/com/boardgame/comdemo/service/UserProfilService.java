@@ -1,8 +1,8 @@
-package com.boardgame.comdemo.repository;
+package com.boardgame.comdemo.service;
 
 import com.boardgame.comdemo.domain.User;
 
-public interface UserProfilRepository {
+public interface UserProfilService {
 
     void showUserProfileInformation(User user);
 
