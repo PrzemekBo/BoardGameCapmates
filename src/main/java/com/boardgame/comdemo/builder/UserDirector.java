@@ -1,8 +1,11 @@
-package com.boardgame.comdemo.domain;
+package com.boardgame.comdemo.builder;
+
+import com.boardgame.comdemo.builder.UserBuilder;
+import com.boardgame.comdemo.domain.User;
 
 public class UserDirector {
 
-    private  UserBuilder userBuilder;
+    private UserBuilder userBuilder;
 
     public UserDirector(UserBuilder userBuilder){
         this.userBuilder=userBuilder;

@@ -1,5 +1,7 @@
-package com.boardgame.comdemo.domain;
+package com.boardgame.comdemo.builder;
 
+
+import com.boardgame.comdemo.domain.User;
 
 public class BasicBuldierUser implements UserBuilder {
 
@@ -43,4 +45,5 @@ public class BasicBuldierUser implements UserBuilder {
     public User getUser() {
         return user;
     }
+
 }

@@ -1,4 +1,4 @@
-package com.boardgame.comdemo.domain;
+package com.boardgame.comdemo.builder;
 
 import com.boardgame.comdemo.domain.HoursAvailability;
 import com.boardgame.comdemo.domain.User;

@@ -1,8 +1,7 @@
 package com.boardgame.comdemo;
 
-import com.boardgame.comdemo.domain.BasicBuldierUser;
+
 import com.boardgame.comdemo.domain.User;
-import com.boardgame.comdemo.domain.UserDirector;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -14,11 +13,16 @@ public class ComDemoApplication {
     }
 
 
+    User.UserBuilder userBuilder= new User.UserBuilder("sfdsfs","dsdff","fdsfsd","fefdsf","fdsfdsf");
+
+
+/*
     BasicBuldierUser buldierUser= new BasicBuldierUser();
 
 
     User user1= new User("Adam","malzsy","dewdew@fdsfds","4324234","sefesf sfsdfds");
     User user2= new User("fef","dasdsa","fdsf","fsfs","fsfds");
+*/
 
 
 
