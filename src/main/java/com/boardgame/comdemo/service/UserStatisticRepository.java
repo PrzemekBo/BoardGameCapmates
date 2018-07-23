@@ -2,7 +2,7 @@ package com.boardgame.comdemo.service;
 
 import com.boardgame.comdemo.domain.User;
 
-public interface UserStatisticService {
+public interface UserStatisticRepository {
 
     void showUserStatistics(User user);
     void showUserLevel(User user);

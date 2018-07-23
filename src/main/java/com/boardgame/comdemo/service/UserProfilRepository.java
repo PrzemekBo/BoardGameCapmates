@@ -2,7 +2,7 @@ package com.boardgame.comdemo.service;
 
 import com.boardgame.comdemo.domain.User;
 
-public interface UserProfilService {
+public interface UserProfilRepository {
 
     void showUserProfileInformation(User user);
 

@@ -20,4 +20,8 @@ public class User {
     private int rankingPosition;
     private UserLevel userLevel;
 
+    public User(String firstname, String lastname, String email, String password, String motto) {
+    }
+
+
 }
