@@ -1,4 +1,4 @@
-package com.boardgame.comdemo.service;
+package com.boardgame.comdemo.repository;
 
 import com.boardgame.comdemo.domain.HoursAvailability;
 

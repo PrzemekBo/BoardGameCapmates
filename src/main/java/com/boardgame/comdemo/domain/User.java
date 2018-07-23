@@ -2,15 +2,16 @@ package com.boardgame.comdemo.domain;
 
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
 
-
+@NoArgsConstructor
 @Getter
 @Setter
 public class User {
-
+    private int id;
     private String firstname;
     private String lastname;
     private String email;
@@ -24,8 +25,53 @@ public class User {
     private int rankingPosition;
     private UserLevel userLevel;
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setMotto(String motto) {
+        this.motto = motto;
+    }
+
+    public void setHoursAvailability(HoursAvailability hoursAvailability) {
+        this.hoursAvailability = hoursAvailability;
+    }
+
+    public void setGameCollection(List gameCollection) {
+        this.gameCollection = gameCollection;
+    }
+
+    public void setGameHistory(List gameHistory) {
+        this.gameHistory = gameHistory;
+    }
+
+    public void setRankingPosition(int rankingPosition) {
+        this.rankingPosition = rankingPosition;
+    }
+
+    public void setUserLevel(UserLevel userLevel) {
+        this.userLevel = userLevel;
+    }
 
     private User(UserBuilder builder){
         this.firstname=builder.firstname;
