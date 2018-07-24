@@ -1,15 +1,15 @@
 package com.boardgame.comdemo.service;
 
-import com.boardgame.comdemo.domain.User;
+import com.boardgame.comdemo.dto.UserDTO;
 
 public interface UserProfilService {
 
-    void showUserProfileInformation(User user);
+    UserDTO showUserProfileInformation(int id);
 
-    void changeAndSaveNewFirstName(User user,String firstname);
-    void changeAndSaveNewLastName(User user,String lastname);
-    void changeAndSaveNewEmail(User user,String email);
-    void changeAndSaveNewPassword(User user,String password);
-    void changeAndSaveNewMotto(User user,String motto);
+    void changeAndSaveNewFirstName(UserDTO userDTO);
+    void changeAndSaveNewLastName(UserDTO userDTO);
+    void changeAndSaveNewEmail(UserDTO userDTO);
+    void changeAndSaveNewPassword(UserDTO userDTO);
+    void changeAndSaveNewMotto(UserDTO userDTO);
 
 }
