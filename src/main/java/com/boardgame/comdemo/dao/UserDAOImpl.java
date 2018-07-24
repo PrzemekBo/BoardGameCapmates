@@ -4,6 +4,7 @@ import com.boardgame.comdemo.domain.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class UserDAOImpl implements UserDAO {
 
@@ -14,6 +15,11 @@ public class UserDAOImpl implements UserDAO {
     }
     @Override
     public User findByEmail(String email) {
-        return  ;
+        Optional<User> users = listOfUser.stream()
+                .filter(user -> user.getEmail() == email)
+                .findAny();
+
+        return users.get();
     }
-}
+    }
+
