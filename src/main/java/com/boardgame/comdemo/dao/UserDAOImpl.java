@@ -18,8 +18,29 @@ public class UserDAOImpl implements UserDAO {
         Optional<User> users = listOfUser.stream()
                 .filter(user -> user.getEmail() == email)
                 .findAny();
-
         return users.get();
     }
+
+    @Override
+    public User findById(int id) {
+
+       Optional<User>users=listOfUser.stream()
+               .filter(user -> user.getId()==id)
+               .findAny();
+       return users.get();
+
     }
+
+    @Override
+    public void updateUser(User user) {
+        User savedUser= findById(user.getId());
+        savedUser.setFirstname(user.getFirstname());
+        savedUser.setLastname(user.getLastname());
+        savedUser.setEmail(user.getEmail());
+        savedUser.setPassword(user.getPassword());
+
+    }
+
+
+}
 
