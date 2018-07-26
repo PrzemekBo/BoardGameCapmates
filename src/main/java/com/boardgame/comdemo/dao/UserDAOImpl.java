@@ -64,6 +64,10 @@ public class UserDAOImpl implements UserDAO {
     public void addGameToUserGameList(String email, Game game) {
         User user = findByEmail(email);
         user.getUserUserGameList().add(game);
+
+        //TODO poprawic
+
+
     }
 
     @Override
