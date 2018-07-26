@@ -4,12 +4,16 @@ import com.boardgame.comdemo.dto.UserDTO;
 
 public interface UserProfilService {
 
-    UserDTO showUserProfileInformation(int id);
+    UserDTO showUserProfileInformation(String email);
 
-    void changeAndSaveNewFirstName(UserDTO userDTO);
-    void changeAndSaveNewLastName(UserDTO userDTO);
-    void changeAndSaveNewEmail(UserDTO userDTO);
-    void changeAndSaveNewPassword(UserDTO userDTO);
-    void changeAndSaveNewMotto(UserDTO userDTO);
+    UserDTO update(UserDTO user);
+
+    UserDTO createUserProfile(UserDTO user);
+
+    void changeAndSaveNewFirstName(int id, String firstname);
+    void changeAndSaveNewLastName(int id,String lastname);
+    void changeAndSaveNewEmail(int id, String email);
+    void changeAndSaveNewPassword(int id,String password);
+    void changeAndSaveNewMotto(int id,String motto);
 
 }

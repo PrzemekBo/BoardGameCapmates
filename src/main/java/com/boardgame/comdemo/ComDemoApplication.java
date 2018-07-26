@@ -13,16 +13,8 @@ public class ComDemoApplication {
     }
 
 
-    User.UserBuilder userBuilder= new User.UserBuilder("sfdsfs","dsdff","fdsfsd","fefdsf","fdsfdsf");
+   // User.UserBuilder userBuilder= new User.UserBuilder("sfdsfs","dsdff","fdsfsd","fefdsf","fdsfdsf");
 
-
-/*
-    BasicBuldierUser buldierUser= new BasicBuldierUser();
-
-
-    User user1= new User("Adam","malzsy","dewdew@fdsfds","4324234","sefesf sfsdfds");
-    User user2= new User("fef","dasdsa","fdsf","fsfs","fsfds");
-*/
 
 
 

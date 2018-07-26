@@ -1,10 +1,18 @@
 package com.boardgame.comdemo.service;
 
-import com.boardgame.comdemo.domain.User;
+import com.boardgame.comdemo.dto.GameDTO;
+import com.boardgame.comdemo.dto.UserDTO;
+
+import java.util.Set;
 
 public interface GameService {
 
-    void showUserGameCollection(User user);
-   // void removeGameFromGameCollection()
+    Set<GameDTO> getGamesCollection(UserDTO userDTO);
+
+    void removeGameFromCollection(UserDTO userTO, GameDTO gameTO);
+
+    GameDTO addGameToGeneralCollection(UserDTO userDTO, GameDTO gameTO);
+
+    Set<GameDTO> addGameToUserCollection(UserDTO userDTO, GameDTO gameDTO);
 
 }

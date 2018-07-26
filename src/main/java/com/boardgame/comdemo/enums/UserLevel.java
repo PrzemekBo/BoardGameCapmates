@@ -1,4 +1,4 @@
-package com.boardgame.comdemo.domain;
+package com.boardgame.comdemo.enums;
 
 public enum  UserLevel {
     NOOB,

@@ -1,27 +1,13 @@
-package com.boardgame.comdemo.domain;
+package com.boardgame.comdemo.dto;
 
-import com.boardgame.comdemo.enums.Hours;
-
-import java.sql.Time;
-import java.time.Instant;
-import java.time.LocalTime;
-
-public class HoursAvailability {
+public class HoursAvailabilityDTO {
 
     private String startTime;
     private String endTime;
     private String message;
 
 
-    public HoursAvailability() {
 
-    }
-
-    public HoursAvailability(String startTime, String endTime, String message) {
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.message = message;
-    }
 
     public String getStartTime() {
         return startTime;
@@ -46,10 +32,10 @@ public class HoursAvailability {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public HoursAvailabilityDTO(String startTime, String endTime, String message) {
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.message = message;
+    }
 }
-
-
-
-
-
-

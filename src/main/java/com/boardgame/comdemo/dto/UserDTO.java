@@ -1,12 +1,10 @@
 package com.boardgame.comdemo.dto;
 
 import com.boardgame.comdemo.domain.HoursAvailability;
-import com.boardgame.comdemo.domain.UserLevel;
-import lombok.Data;
+import com.boardgame.comdemo.enums.UserLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.List;
 
