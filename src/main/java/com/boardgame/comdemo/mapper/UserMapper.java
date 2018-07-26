@@ -1,4 +1,4 @@
-package com.boardgame.comdemo;
+package com.boardgame.comdemo.mapper;
 
 import com.boardgame.comdemo.domain.User;
 import com.boardgame.comdemo.dto.UserDTO;
@@ -17,10 +17,9 @@ public class UserMapper {
         userDTO.setEmail(user.getEmail());
         userDTO.setPassword(user.getPassword());
         userDTO.setMotto(user.getMotto());
-        userDTO.setHoursAvailability(user.getHoursAvailability());
+        userDTO.setAvailibility(user.getAvailibility());
         userDTO.setGameHistory(user.getGameHistory());
-        userDTO.setRankingPosition(user.getRankingPosition());
-        userDTO.setUserLevel(user.getUserLevel());
+        userDTO.setAvailibility(user.getAvailibility());
         return userDTO;
     }
 
@@ -33,10 +32,9 @@ public class UserMapper {
         user.setLastname(userDTO.getLastname());
         user.setEmail(userDTO.getEmail());
         user.setMotto(userDTO.getMotto());
-        user.setHoursAvailability(userDTO.getHoursAvailability());
+        user.setAvailibility(userDTO.getAvailibility());
         user.setGameHistory(userDTO.getGameHistory());
-        user.setRankingPosition(userDTO.getRankingPosition());
-        user.setUserLevel(userDTO.getUserLevel());
+
 
         return user;
 

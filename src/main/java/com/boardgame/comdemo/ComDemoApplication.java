@@ -13,10 +13,6 @@ public class ComDemoApplication {
     }
 
 
-   // User.UserBuilder userBuilder= new User.UserBuilder("sfdsfs","dsdff","fdsfsd","fefdsf","fdsfdsf");
-
-
-
 
 
 

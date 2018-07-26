@@ -7,6 +7,7 @@ import java.util.Set;
 
 public interface GameDAO {
 
+/*
     Set<Game> getUserAllGames(String email);
 
     Game findGameByName(String gameName);
@@ -21,5 +22,14 @@ public interface GameDAO {
     boolean removeGame(Game game);
 
     void addGameToGlobalList(Game game);
+*/
+    void add(Game game);
+
+    void update(Game game);
+
+    Game findByName(String name);
+
+    void delete(String name);
+
 
 }

@@ -7,11 +7,12 @@ import java.util.Set;
 
 public interface GameService {
 
-    Set<GameDTO> getGamesCollection(UserDTO userDTO);
 
-    void removeGameFromCollection(UserDTO userTO, GameDTO gameTO);
+    Set<GameDTO> getGamesCollection(UserDTO user);
 
-    GameDTO addGameToGeneralCollection(UserDTO userDTO, GameDTO gameTO);
+    void removeGameFromCollection(UserDTO userDTO, GameDTO gameDTO);
+
+    Set<GameDTO> addGameToGeneralCollection(UserDTO userDTO, GameDTO gameDTO);
 
     Set<GameDTO> addGameToUserCollection(UserDTO userDTO, GameDTO gameDTO);
 

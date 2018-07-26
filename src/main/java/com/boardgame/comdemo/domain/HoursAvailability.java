@@ -1,11 +1,5 @@
 package com.boardgame.comdemo.domain;
 
-import com.boardgame.comdemo.enums.Hours;
-
-import java.sql.Time;
-import java.time.Instant;
-import java.time.LocalTime;
-
 public class HoursAvailability {
 
     private String startTime;

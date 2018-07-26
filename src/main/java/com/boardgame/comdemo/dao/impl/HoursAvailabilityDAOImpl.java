@@ -1,5 +1,6 @@
-package com.boardgame.comdemo.dao;
+package com.boardgame.comdemo.dao.impl;
 
+import com.boardgame.comdemo.dao.HoursAvailabilityDAO;
 import com.boardgame.comdemo.domain.HoursAvailability;
 import com.boardgame.comdemo.domain.User;
 
@@ -32,22 +33,13 @@ public class HoursAvailabilityDAOImpl implements HoursAvailabilityDAO {
 
     @Override
     public List<HoursAvailability> findAll(User user) {
-        List<HoursAvailability>timeList=user.getHoursAvailabilities();
-        return timeList;
+
+        return null;
     }
 
     @Override
     public HoursAvailability findByTimePeriod(User user, String from, String to) {
 
-  /*      if (from != null && to != null) {
-            List<HoursAvailability> availibilityTime = findAll(user);
-            for (HoursAvailability time : availibilityTime) {
-
-               // if (time.getStartTime().isAfter(from) && time.getEndTime().isBefore(to)) {
-                    return time;
-                }
-            }
-        }*/
         return null;
     }
 

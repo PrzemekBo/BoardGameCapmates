@@ -1,17 +1,12 @@
 package com.boardgame.comdemo.dto;
 
-import com.boardgame.comdemo.domain.HoursAvailability;
-import com.boardgame.comdemo.enums.UserLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.boardgame.comdemo.domain.Game;
+import com.boardgame.comdemo.domain.GamesHistory;
 
 import java.util.List;
+import java.util.Set;
 
 
-@Getter
-@Setter
-@NoArgsConstructor
 public class UserDTO {
     private int id;
     private String firstname;
@@ -19,13 +14,15 @@ public class UserDTO {
     private String email;
     private String password;
     private String motto;
-    private HoursAvailability hoursAvailability;
 
-    private List gameCollection;
-    private List gameHistory;
 
-    private int rankingPosition;
-    private UserLevel userLevel;
+    private List<com.boardgame.comdemo.domain.Availibility> Availibility;
+    private Set<Game> gamesCollection;
+    private List<GamesHistory> gameHistory;
+
+    public UserDTO() {
+
+    }
 
     public int getId() {
         return id;
@@ -75,43 +72,37 @@ public class UserDTO {
         this.motto = motto;
     }
 
-    public HoursAvailability getHoursAvailability() {
-        return hoursAvailability;
+    public List<com.boardgame.comdemo.domain.Availibility> getAvailibility() {
+        return Availibility;
     }
 
-    public void setHoursAvailability(HoursAvailability hoursAvailability) {
-        this.hoursAvailability = hoursAvailability;
+    public void setAvailibility(List<com.boardgame.comdemo.domain.Availibility> availibility) {
+        Availibility = availibility;
     }
 
-    public List getGameCollection() {
-        return gameCollection;
+    public Set<Game> getGamesCollection() {
+        return gamesCollection;
     }
 
-    public void setGameCollection(List gameCollection) {
-        this.gameCollection = gameCollection;
+    public void setGamesCollection(Set<Game> gamesCollection) {
+        this.gamesCollection = gamesCollection;
     }
 
-    public List getGameHistory() {
+    public List<GamesHistory> getGameHistory() {
         return gameHistory;
     }
 
-    public void setGameHistory(List gameHistory) {
+    public void setGameHistory(List<GamesHistory> gameHistory) {
         this.gameHistory = gameHistory;
     }
 
-    public int getRankingPosition() {
-        return rankingPosition;
-    }
-
-    public void setRankingPosition(int rankingPosition) {
-        this.rankingPosition = rankingPosition;
-    }
-
-    public UserLevel getUserLevel() {
-        return userLevel;
-    }
-
-    public void setUserLevel(UserLevel userLevel) {
-        this.userLevel = userLevel;
+    public UserDTO(int id, String firstname, String lastname, String email, String password, String motto) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+        this.motto = motto;
     }
 }
+

@@ -1,6 +1,6 @@
 package com.boardgame.comdemo.dao;
 
-import com.boardgame.comdemo.UserMapper;
+import com.boardgame.comdemo.mapper.UserMapper;
 import com.boardgame.comdemo.domain.Game;
 import com.boardgame.comdemo.domain.User;
 import com.boardgame.comdemo.service.UserProfilService;
@@ -10,9 +10,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.w3c.dom.UserDataHandler;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -100,13 +98,19 @@ public class UserDAOImplTest {
 
         Game game = new Game(1,"Warcaby");
 
-        userDAO.addGameToUserGameList("adammalysz@gmail.com", game);
+        userDAO.addGameToCollection("adammalysz@gmail.com", game);
 
-        int sizeOfCollection = userDAO.getUserUserGameList("adammalysz@gmail.com").size();
+        int sizeOfCollection = userDAO.getGameCollection("adammalysz@gmail.com").size();
         assertEquals(1, sizeOfCollection);
     }
 
     @Test
     public void getUserUserGameList() {
+    }
+
+    @Test
+    public void shouldDeleteGameFromUserCollection(){
+
+
     }
 }
