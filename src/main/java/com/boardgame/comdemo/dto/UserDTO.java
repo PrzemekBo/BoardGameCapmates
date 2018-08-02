@@ -2,6 +2,7 @@ package com.boardgame.comdemo.dto;
 
 import com.boardgame.comdemo.domain.Game;
 import com.boardgame.comdemo.domain.GamesHistory;
+import lombok.Builder;
 
 import java.util.List;
 import java.util.Set;
@@ -23,6 +24,7 @@ public class UserDTO {
     public UserDTO() {
 
     }
+
 
     public int getId() {
         return id;

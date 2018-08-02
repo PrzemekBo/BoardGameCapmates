@@ -1,11 +1,11 @@
 package com.boardgame.comdemo.service.impl;
 
-import com.boardgame.comdemo.dao.error.UserNotFoundException;
-import com.boardgame.comdemo.dto.UserSearchTO;
-import com.boardgame.comdemo.mapper.UserMapper;
 import com.boardgame.comdemo.dao.UserDAO;
+import com.boardgame.comdemo.dao.error.UserNotFoundException;
 import com.boardgame.comdemo.domain.User;
 import com.boardgame.comdemo.dto.UserDTO;
+import com.boardgame.comdemo.dto.UserSearchTO;
+import com.boardgame.comdemo.mapper.UserMapper;
 import com.boardgame.comdemo.service.UserProfilService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,8 +23,6 @@ public class UserProfilServiceImpl implements UserProfilService {
 
     @Autowired
     UserMapper userMapper;
-
-
 
 
     @Autowired
@@ -50,6 +48,7 @@ public class UserProfilServiceImpl implements UserProfilService {
     public List<UserDTO> getAllUsers() {
         return userMapper.map2TO(userDAO.getAllUsers());
     }
+
     @Override
     public List<UserDTO> findUserByMultipleParam(UserSearchTO user) {
 
@@ -104,6 +103,7 @@ public class UserProfilServiceImpl implements UserProfilService {
         entity = userDAO.update(entity);
         return userMapper.map(entity);
     }
+
     @Override
     public void deleteUser(String eMail) {
         userDAO.delete(eMail);
