@@ -30,6 +30,8 @@ public interface UserDAO {
 
     List<User> getUsersByGameType(String gameName);
 
+    User getUserByEMail(String eMail);
+
 
     void addGameToCollection(String email, Game game);
 
@@ -52,6 +54,6 @@ public interface UserDAO {
 
     List<User> getUsersByFirstName(String firstName);
 
-    public Optional<User> getUserByEMail(String eMail);
+  //  public Optional<User> getUserByEMail(String eMail);
 
 }

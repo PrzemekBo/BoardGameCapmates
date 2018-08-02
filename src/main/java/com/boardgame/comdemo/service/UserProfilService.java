@@ -10,6 +10,7 @@ import java.util.List;
 public interface UserProfilService {
 
 
+/*
     UserDTO createUserProfile(UserDTO user);
 
     UserDTO getProfileInformation(String email);
@@ -23,6 +24,24 @@ public interface UserProfilService {
     List<UserDTO> findUserByMultipleParam(UserSearchTO user);
 
     void deleteUser(String eMail);
+
+
+*/
+
+
+    UserDTO createUserProfile(UserDTO user);
+
+    UserDTO getProfileInformation(String eMail);
+
+    List<UserDTO> getAllUsers();
+
+    List<UserDTO> findUserByMultipleParam(UserSearchTO user);
+
+    UserDTO update(UserDTO user);
+
+    void deleteUser(String eMail);
+
+
 
 
 

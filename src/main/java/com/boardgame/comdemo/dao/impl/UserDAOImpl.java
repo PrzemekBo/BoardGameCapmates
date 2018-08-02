@@ -6,6 +6,7 @@ import com.boardgame.comdemo.domain.Availibility;
 import com.boardgame.comdemo.domain.Game;
 import com.boardgame.comdemo.domain.GamesHistory;
 import com.boardgame.comdemo.domain.User;
+import com.google.common.base.Preconditions;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -15,6 +16,10 @@ import java.util.stream.Collectors;
 @Repository
 public class UserDAOImpl implements UserDAO {
 
+
+    private final static String EMAIL_IS_NULL = "Email is empty";
+
+    private final static String USER_NOT_FOUND = "User not found";
 
     private final static String TIME_NOT_FOUND = "Zero player on this time";
     private List<User> listOfUser;
@@ -48,7 +53,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User update(User user) {
-        Optional<User> userToUpdate = getUserByEMail(user.getEmail());
+        User userToUpdate = getUserByEMail(user.getEmail());
         listOfUser.remove(userToUpdate);
         listOfUser.add(user);
 
@@ -205,14 +210,12 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public Optional<User> getUserByEMail(String eMail) {
+    public User getUserByEMail(String eMail) {
+        Preconditions.checkNotNull(eMail, EMAIL_IS_NULL);
 
-
-        return listOfUser.stream().filter(e -> eMail.equals(e.getEmail())).findAny();
-
-
+        return listOfUser.stream().filter(e -> eMail.equals(e.getEmail())).findAny()
+                .orElseThrow(() -> new UserNotFoundException(USER_NOT_FOUND));
     }
-
 
 
 
