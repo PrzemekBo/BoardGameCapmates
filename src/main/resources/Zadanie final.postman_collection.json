@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "8c8565ec-879e-4fbb-a48f-99714ebb27e3",
+		"name": "Zadanie final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "5c224e0b-f33f-44e9-bfd2-3f4954fe4d93",
+			"name": "http://localhost:8080/users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n        \"id\": 2,\n        \"firstname\": \"Tome\",\n        \"lastname\": \"Doeems\",\n        \"email\": \"tomek@gmail.com\",\n        \"password\": \"43ee424324\",\n        \"motto\": \"fer rewrsad\",\n        \"gamesCollection\": null,\n        \"gameHistory\": null,\n        \"availibility\": null\n    },"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						""
+					]
+				},
+				"description": "findtUeserByEMail"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "71b0969e-e77b-4552-8744-6c0637b83c16",
+			"name": "http://localhost:8080/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"id\": 1,\n        \"firstname\": \"Adsdsdam\",\n        \"lastname\": \"Malysz\",\n        \"email\": \"adamdsmalysz@gmail.com\",\n        \"password\": \"43424324\",\n        \"motto\": \"fer rewrsad\",\n        \"gamesCollection\": null,\n        \"gameHistory\": null,\n        \"availibility\": null\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"add"
+					]
+				},
+				"description": "add"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d6e6637f-b2ba-43e2-8438-e0e4f01b4fb5",
+			"name": "http://localhost:8080/users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"id\": 1,\n        \"firstname\": \"Adsdsdam\",\n        \"lastname\": \"Malysz\",\n        \"email\": \"adamdsmalysz@gmail.com\",\n        \"password\": \"43424324\",\n        \"motto\": \"fer rewrsad\",\n        \"gamesCollection\": null,\n        \"gameHistory\": null,\n        \"availibility\": null\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/find?email=ada@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"find"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "ada@gmail.com"
+						}
+					]
+				},
+				"description": "findUserByEMail"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "86ebd058-485d-4ab2-8f14-934b1d49c116",
+			"name": "http://localhost:8080/users",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"id\": 1,\n        \"firstname\": \"Adam\",\n        \"lastname\": \"Malewqeewrysz\",\n        \"email\": \"adammalysz@gmail.com\",\n        \"password\": \"43424324\",\n        \"motto\": \"fer rewrsad\",\n        \"gamesCollection\": null,\n        \"gameHistory\": null,\n        \"availibility\": null\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"update"
+					]
+				},
+				"description": "update"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "a70a04ab-434c-4abc-9a5c-52c35ba45616",
+			"name": "http://localhost:8080/users",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"id\": 1,\n        \"firstname\": \"Adam\",\n        \"lastname\": \"Malysz\",\n        \"email\": \"adammalysz@gmail.com\",\n        \"password\": \"43424324\",\n        \"motto\": \"fer rewrsad\",\n        \"gamesCollection\": null,\n        \"gameHistory\": null,\n        \"availibility\": null\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/delete?email=adammalysz@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "adammalysz@gmail.com"
+						}
+					]
+				},
+				"description": "delete"
+			},
+			"response": []
+		}
+	]
+}
