@@ -1,6 +1,7 @@
 package com.boardgame.comdemo.domain;
 
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +11,7 @@ import java.util.Set;
 
 @Getter
 @Setter
+
 public class User {
     private int id;
     private String firstname;
@@ -21,6 +23,15 @@ public class User {
 
     private List<Availibility> Availibility;
     private Set<Game> gamesCollection;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     private List<GamesHistory> gameHistory;
 
 
@@ -56,13 +67,8 @@ public class User {
         this.lastname = lastname;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+
 
     public String getPassword() {
         return password;

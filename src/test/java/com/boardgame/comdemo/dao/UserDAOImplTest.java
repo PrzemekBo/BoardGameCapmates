@@ -62,6 +62,20 @@ public class UserDAOImplTest {
 
 
     @Test
+    public void shouldFindByFirstName() {
+
+        //When
+        int userFirstName = userDAO.findByFirstName("Tome").getId();
+
+        //Then
+        Assert.assertEquals(2, userFirstName);
+
+
+    }
+
+
+
+    @Test
     public void shouldUpdate() {
 
 

@@ -1,6 +1,7 @@
 package com.boardgame.comdemo.dao.impl;
 
 import com.boardgame.comdemo.dao.UserDAO;
+import com.boardgame.comdemo.dao.error.UserNotFoundException;
 import com.boardgame.comdemo.domain.Availibility;
 import com.boardgame.comdemo.domain.Game;
 import com.boardgame.comdemo.domain.GamesHistory;
@@ -38,8 +39,16 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    public User findByFirstName(String firstname) {
+        Optional<User> users = listOfUser.stream()
+                .filter(user -> user.getFirstname() == firstname)
+                .findAny();
+        return users.get();
+    }
+
+    @Override
     public User update(User user) {
-        User userToUpdate = findByEmail(user.getEmail());
+        Optional<User> userToUpdate = getUserByEMail(user.getEmail());
         listOfUser.remove(userToUpdate);
         listOfUser.add(user);
 
@@ -54,22 +63,32 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void delete(String email) {
-        listOfUser.remove(findByEmail(email));
+        listOfUser.remove(getUserByEMail(email));
 
 
     }
 
+    @Override
+    public List<User> getAllUsers() {
 
-    /*  @Override
-      public void updateUser(User user) {
-          User savedUser = findById(user.getId());
-          savedUser.setFirstname(user.getFirstname());
-          savedUser.setLastname(user.getLastname());
-          savedUser.setEmail(user.getEmail());
-          savedUser.setPassword(user.getPassword());
+            return this.listOfUser;
 
-      }
-  */
+    }
+
+    @Override
+    public List<User> getUsersByLastName(String lastName) {
+        return listOfUser.stream()
+                .filter(l -> lastName.equalsIgnoreCase(l.getLastname()))
+                .collect(Collectors.toList());
+    }
+    @Override
+    public List<User> getUsersByGameType(String gameName) {
+        return listOfUser.stream()
+                .filter(u -> u.getGamesCollection().stream()
+                        .anyMatch(g -> g.getGameName().equalsIgnoreCase(gameName)))
+                .collect(Collectors.toList());
+    }
+
     @Override
     public void addGameToCollection(String email, Game game) {
       //  User user = findByEmail(email);
@@ -152,6 +171,26 @@ public class UserDAOImpl implements UserDAO {
 
     }
 
+    @Override
+    public List<User> findUserByFirstNameAndLastNameAndEmailAdres(String firstname, String lastname, String email) {
+        List<User> lookingForUser = new ArrayList<>();
+        for (User user : listOfUser) {
+            if ((user.getFirstname().equals(firstname)) &&
+                    (user.getLastname().equals(lastname)) &&
+                    (email.equals(user.getEmail()))) {
+                lookingForUser.add(user);
+            }
+        }
+        return lookingForUser;
+    }
+
+   @Override
+    public List<User> getUsersByFirstName(String firstName) {
+        return listOfUser.stream()
+                .filter(f -> firstName.equalsIgnoreCase(f.getFirstname()))
+                .collect(Collectors.toList());
+    }
+
 
     public UserDAOImpl() {
         listOfUser = new ArrayList<>();
@@ -164,6 +203,17 @@ public class UserDAOImpl implements UserDAO {
         listOfUser.add(user3);
 
     }
+
+    @Override
+    public Optional<User> getUserByEMail(String eMail) {
+
+
+        return listOfUser.stream().filter(e -> eMail.equals(e.getEmail())).findAny();
+
+
+    }
+
+
 
 
 }

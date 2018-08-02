@@ -4,6 +4,9 @@ import com.boardgame.comdemo.domain.User;
 import com.boardgame.comdemo.dto.UserDTO;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 @Component
 public class UserMapper {
@@ -38,6 +41,11 @@ public class UserMapper {
 
         return user;
 
+    }
+
+
+    public List<UserDTO> map2TO(List<User> userEntities) {
+        return userEntities.stream().map(this::map).collect(Collectors.toList());
     }
 
 }
