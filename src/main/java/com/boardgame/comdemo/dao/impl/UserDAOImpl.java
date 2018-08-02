@@ -9,6 +9,7 @@ import com.boardgame.comdemo.domain.User;
 import com.google.common.base.Preconditions;
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.PostConstruct;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -23,6 +24,8 @@ public class UserDAOImpl implements UserDAO {
 
     private final static String TIME_NOT_FOUND = "Zero player on this time";
     private List<User> listOfUser;
+
+
 
 
     @Override
@@ -213,9 +216,13 @@ public class UserDAOImpl implements UserDAO {
     public User getUserByEMail(String eMail) {
         Preconditions.checkNotNull(eMail, EMAIL_IS_NULL);
 
+
+
         return listOfUser.stream().filter(e -> eMail.equals(e.getEmail())).findAny()
                 .orElseThrow(() -> new UserNotFoundException(USER_NOT_FOUND));
     }
+
+
 
 
 

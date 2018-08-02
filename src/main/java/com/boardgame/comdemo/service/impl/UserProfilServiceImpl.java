@@ -17,11 +17,14 @@ import java.util.List;
 @Service
 public class UserProfilServiceImpl implements UserProfilService {
 
-    private UserDAO userDAO;
-    private UserMapper userMapper;
+
+    @Autowired
+    UserDAO userDAO;
+
+    @Autowired
+    UserMapper userMapper;
 
 
-    List<User> usersList = new ArrayList<>();
 
 
     @Autowired
@@ -33,7 +36,9 @@ public class UserProfilServiceImpl implements UserProfilService {
 
     @Override
     public UserDTO createUserProfile(UserDTO user) {
-        return null;
+        User entity = userMapper.map(user);
+        entity = userDAO.createUser(entity);
+        return userMapper.map(entity);
     }
 
     @Override
@@ -43,23 +48,66 @@ public class UserProfilServiceImpl implements UserProfilService {
 
     @Override
     public List<UserDTO> getAllUsers() {
-        return null;
+        return userMapper.map2TO(userDAO.getAllUsers());
     }
-
     @Override
     public List<UserDTO> findUserByMultipleParam(UserSearchTO user) {
-        return null;
+
+        String eMail = user.geteMail();
+        String firstName = user.getFirstName();
+        String lastName = user.getLastName();
+        //String gameName = user.getGameName();
+
+        List<User> resultList = new ArrayList<>();
+
+        if (eMail.length() > 0) {
+            try {
+                User foundPlayer = userDAO.getUserByEMail(eMail);
+                resultList.add(foundPlayer);
+            } catch (UserNotFoundException ex) {
+            }
+        }
+
+        if (firstName.length() > 0) {
+            List<User> foundPlayers = userDAO.getUsersByFirstName(firstName);
+            if (resultList.isEmpty()) {
+                resultList.addAll(foundPlayers);
+            } else {
+                resultList.retainAll(foundPlayers);
+            }
+        }
+
+        if (lastName.length() > 0) {
+            List<User> foundPlayers = userDAO.getUsersByLastName(lastName);
+            if (resultList.isEmpty()) {
+                resultList.addAll(foundPlayers);
+            } else {
+                resultList.retainAll(foundPlayers);
+            }
+        }
+/*
+        if (gameName.length() > 0) {
+            List<User> foundPlayers = userDAO.getUsersByGameType(gameName);
+            if (resultList.isEmpty()) {
+                resultList.addAll(foundPlayers);
+            } else {
+                resultList.retainAll(foundPlayers);
+            }
+        }*/
+
+        return userMapper.map2TO(resultList);
     }
 
     @Override
     public UserDTO update(UserDTO user) {
-        return null;
+        User entity = userMapper.map(user);
+        entity = userDAO.update(entity);
+        return userMapper.map(entity);
     }
-
     @Override
     public void deleteUser(String eMail) {
-        usersList.remove(userDAO.getUserByEMail(eMail));
+        userDAO.delete(eMail);
     }
 
-    }
+
 }

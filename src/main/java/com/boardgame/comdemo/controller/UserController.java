@@ -27,19 +27,19 @@ public class UserController {
     }
 
 
-    //TODO
+        //TODo
     @PostMapping(value = "/add")
     public UserDTO addNewUser(@RequestBody UserDTO userDTO) {
         return userProfilService.createUserProfile(userDTO);
     }
 
-
-    @GetMapping(value = "/find/{email}")
-    public UserDTO findUserByEMail(@PathVariable("email") String email) {
+    //TODO
+    @GetMapping(value = "/find")
+    public UserDTO findUserByEMail(@RequestParam("email") String email) {
         return userProfilService.getProfileInformation(email);
     }
 
-    //TODO
+        //TODO
     @GetMapping(value = "/")
     public List<UserDTO> findtUeserByEMail() {
         return userProfilService.getAllUsers();
@@ -52,21 +52,21 @@ public class UserController {
     }*/
 
 
- //TODO
+    //TODO
     @PutMapping(value = "/update")
     public UserDTO updateUserProfile(@RequestBody UserDTO userDTO) {
         return userProfilService.update(userDTO);
     }
 
 
-    //TODO
-    @DeleteMapping(value = "/delete{email}")
-    public void deleteUser(@PathVariable("email") String email) {
+        //TODO
+    @DeleteMapping(value = "/delete")
+    public void deleteUser(@RequestParam("email") String email) {
         userProfilService.deleteUser(email);
     }
 
 
-    @GetMapping(value = "/search")
+    @RequestMapping(value = "/search")
     public List<UserDTO> findUsers(@RequestBody UserSearchTO user) {
         return userProfilService.findUserByMultipleParam(user);
     }

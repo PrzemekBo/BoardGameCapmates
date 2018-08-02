@@ -5,7 +5,7 @@ public class UserSearchTO {
     private String eMail;
     private String firstName;
     private String lastName;
-    private String gameName;
+   // private String gameName;
 
 
     public String geteMail() {
@@ -32,6 +32,7 @@ public class UserSearchTO {
         this.lastName = lastName;
     }
 
+/*
     public String getGameName() {
         return gameName;
     }
@@ -39,11 +40,12 @@ public class UserSearchTO {
     public void setGameName(String gameName) {
         this.gameName = gameName;
     }
+*/
 
     public UserSearchTO(String eMail, String firstName, String lastName, String gameName) {
         this.eMail = eMail;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.gameName = gameName;
+       // this.gameName = gameName;
     }
 }
